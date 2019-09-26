@@ -1,0 +1,50 @@
+#-----------------------------------------------------------
+# Vivado v2018.3 (64-bit)
+# SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
+# IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+# Start of session at: Fri Mar 15 23:07:57 2019
+# Process ID: 2768
+# Current directory: C:/Users/Jason/Desktop/project_1
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent11956 C:\Users\Jason\Desktop\project_1\project_1.xpr
+# Log file: C:/Users/Jason/Desktop/project_1/vivado.log
+# Journal file: C:/Users/Jason/Desktop/project_1\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/Jason/Desktop/project_1/project_1.xpr
+update_compile_order -fileset sources_1
+launch_simulation
+open_wave_config C:/Users/Jason/Desktop/project_1/simpipelining_behav.wcfg
+source simpipelining.tcl
+relaunch_sim
+save_wave_config {C:/Users/Jason/Desktop/project_1/simpipelining_behav.wcfg}
+close_sim
+launch_simulation
+open_wave_config C:/Users/Jason/Desktop/project_1/simpipelining_behav.wcfg
+source simpipelining.tcl
+save_wave_config {C:/Users/Jason/Desktop/project_1/simpipelining_behav.wcfg}
+close_sim
+launch_simulation
+open_wave_config C:/Users/Jason/Desktop/project_1/simpipelining_behav.wcfg
+source simpipelining.tcl
+relaunch_sim
+relaunch_sim
+save_wave_config {C:/Users/Jason/Desktop/project_1/simpipelining_behav.wcfg}
+close_sim
+launch_simulation
+open_wave_config C:/Users/Jason/Desktop/project_1/simpipelining_behav.wcfg
+source simpipelining.tcl
+close_sim
+launch_simulation
+open_wave_config C:/Users/Jason/Desktop/project_1/simpipelining_behav.wcfg
+source simpipelining.tcl
+close_sim
+launch_simulation
+open_wave_config C:/Users/Jason/Desktop/project_1/simpipelining_behav.wcfg
+source simpipelining.tcl
+relaunch_sim
+save_wave_config {C:/Users/Jason/Desktop/project_1/simpipelining_behav.wcfg}
+close_sim
+launch_simulation
+open_wave_config C:/Users/Jason/Desktop/project_1/simpipelining_behav.wcfg
+source simpipelining.tcl
+close_sim

@@ -1,0 +1,813 @@
+
+*** Running vivado
+    with args -log pipelining.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source pipelining.tcl
+
+
+****** Vivado v2018.3 (64-bit)
+  **** SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
+  **** IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+    ** Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+
+source pipelining.tcl -notrace
+Command: synth_design -top pipelining -part xc7a100tcsg324-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100t'
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 13412 
+WARNING: [Synth 8-1849] concatenation with unsized literal; will interpret as 32 bits [C:/Users/Jason/Desktop/project_1/movzx.v:27]
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 354.488 ; gain = 88.992
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'pipelining' [C:/Users/Jason/Desktop/project_1/project_1.srcs/sources_1/new/pipelining.v:21]
+	Parameter sys_2 bound to: 5'b00010 
+	Parameter sys_4 bound to: 5'b00100 
+	Parameter sys_hex2 bound to: 34 - type: integer 
+	Parameter signExt_2 bound to: 5'b00010 
+	Parameter sys_1f bound to: 5'b11111 
+	Parameter load bound to: 1'b1 
+	Parameter pc_4 bound to: 4 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'Register' [C:/Users/Jason/Desktop/project_1/Register.v:23]
+	Parameter DATA_WIDTH bound to: 32 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'Register' (1#1) [C:/Users/Jason/Desktop/project_1/Register.v:23]
+INFO: [Synth 8-6157] synthesizing module 'rom' [C:/Users/Jason/Desktop/project_1/rom.v:23]
+	Parameter DATA_WIDTH bound to: 32 - type: integer 
+	Parameter ADDR_WIDTH bound to: 10 - type: integer 
+INFO: [Synth 8-3876] $readmem data file 'C:/b.txt' is read successfully [C:/Users/Jason/Desktop/project_1/rom.v:33]
+INFO: [Synth 8-6155] done synthesizing module 'rom' (2#1) [C:/Users/Jason/Desktop/project_1/rom.v:23]
+INFO: [Synth 8-6157] synthesizing module 'IF_ID' [C:/Users/Jason/Desktop/project_1/project_1.srcs/sources_1/new/IF_ID.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'IF_ID' (3#1) [C:/Users/Jason/Desktop/project_1/project_1.srcs/sources_1/new/IF_ID.v:23]
+INFO: [Synth 8-6157] synthesizing module 'regfile' [C:/Users/Jason/Desktop/project_1/regfile.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'regfile' (4#1) [C:/Users/Jason/Desktop/project_1/regfile.v:23]
+INFO: [Synth 8-6157] synthesizing module 'ID_EX' [C:/Users/Jason/Desktop/project_1/project_1.srcs/sources_1/new/ID_EX.v:23]
+WARNING: [Synth 8-3848] Net RegDst_out in module/entity ID_EX does not have driver. [C:/Users/Jason/Desktop/project_1/project_1.srcs/sources_1/new/ID_EX.v:29]
+INFO: [Synth 8-6155] done synthesizing module 'ID_EX' (5#1) [C:/Users/Jason/Desktop/project_1/project_1.srcs/sources_1/new/ID_EX.v:23]
+WARNING: [Synth 8-689] width (1) of port connection 'PCr_out' does not match port width (32) of module 'ID_EX' [C:/Users/Jason/Desktop/project_1/project_1.srcs/sources_1/new/pipelining.v:161]
+INFO: [Synth 8-6157] synthesizing module 'main_control' [C:/Users/Jason/Desktop/project_1/main_control.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'main_control' (6#1) [C:/Users/Jason/Desktop/project_1/main_control.v:23]
+INFO: [Synth 8-6157] synthesizing module 'Muxb5' [C:/Users/Jason/Desktop/project_1/Muxb5.v:1]
+INFO: [Synth 8-6157] synthesizing module 'mux2_1' [C:/Users/Jason/Desktop/project_1/selector.v:23]
+	Parameter WIDTH bound to: 5 - type: integer 
+INFO: [Synth 8-226] default block is never used [C:/Users/Jason/Desktop/project_1/selector.v:30]
+INFO: [Synth 8-6155] done synthesizing module 'mux2_1' (7#1) [C:/Users/Jason/Desktop/project_1/selector.v:23]
+WARNING: [Synth 8-689] width (5) of port connection 'out1' does not match port width (6) of module 'mux2_1' [C:/Users/Jason/Desktop/project_1/Muxb5.v:7]
+INFO: [Synth 8-6155] done synthesizing module 'Muxb5' (8#1) [C:/Users/Jason/Desktop/project_1/Muxb5.v:1]
+INFO: [Synth 8-6157] synthesizing module 'movzx' [C:/Users/Jason/Desktop/project_1/movzx.v:22]
+	Parameter IN_WIDTH bound to: 16 - type: integer 
+	Parameter OUT_WIDTH bound to: 32 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'movzx' (9#1) [C:/Users/Jason/Desktop/project_1/movzx.v:22]
+INFO: [Synth 8-6157] synthesizing module 'movsx' [C:/Users/Jason/Desktop/project_1/movsx.v:23]
+	Parameter IN_WIDTH bound to: 16 - type: integer 
+	Parameter OUT_WIDTH bound to: 32 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'movsx' (10#1) [C:/Users/Jason/Desktop/project_1/movsx.v:23]
+INFO: [Synth 8-6157] synthesizing module 'movsx__parameterized0' [C:/Users/Jason/Desktop/project_1/movsx.v:23]
+	Parameter IN_WIDTH bound to: 26 - type: integer 
+	Parameter OUT_WIDTH bound to: 32 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'movsx__parameterized0' (10#1) [C:/Users/Jason/Desktop/project_1/movsx.v:23]
+INFO: [Synth 8-6157] synthesizing module 'shifter' [C:/Users/Jason/Desktop/project_1/shifter.v:23]
+	Parameter DATA_WIDTH bound to: 32 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'shifter' (11#1) [C:/Users/Jason/Desktop/project_1/shifter.v:23]
+INFO: [Synth 8-6157] synthesizing module 'Muxb32' [C:/Users/Jason/Desktop/project_1/Muxb32.v:1]
+INFO: [Synth 8-6157] synthesizing module 'mux2_1__parameterized0' [C:/Users/Jason/Desktop/project_1/selector.v:23]
+	Parameter WIDTH bound to: 32 - type: integer 
+INFO: [Synth 8-226] default block is never used [C:/Users/Jason/Desktop/project_1/selector.v:30]
+INFO: [Synth 8-6155] done synthesizing module 'mux2_1__parameterized0' (11#1) [C:/Users/Jason/Desktop/project_1/selector.v:23]
+WARNING: [Synth 8-689] width (32) of port connection 'out1' does not match port width (33) of module 'mux2_1__parameterized0' [C:/Users/Jason/Desktop/project_1/Muxb32.v:7]
+INFO: [Synth 8-6155] done synthesizing module 'Muxb32' (12#1) [C:/Users/Jason/Desktop/project_1/Muxb32.v:1]
+INFO: [Synth 8-6157] synthesizing module 'Mux4b32' [C:/Users/Jason/Desktop/project_1/project_1.srcs/sources_1/new/Mux4b32.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'Mux4b32' (13#1) [C:/Users/Jason/Desktop/project_1/project_1.srcs/sources_1/new/Mux4b32.v:1]
+INFO: [Synth 8-6157] synthesizing module 'ALU' [C:/Users/Jason/Desktop/project_1/ALU.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'ALU' (14#1) [C:/Users/Jason/Desktop/project_1/ALU.v:23]
+INFO: [Synth 8-6157] synthesizing module 'EX_MEM' [C:/Users/Jason/Desktop/project_1/project_1.srcs/sources_1/new/EX_MEM.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'EX_MEM' (15#1) [C:/Users/Jason/Desktop/project_1/project_1.srcs/sources_1/new/EX_MEM.v:1]
+WARNING: [Synth 8-689] width (5) of port connection 'WSharp_out' does not match port width (32) of module 'EX_MEM' [C:/Users/Jason/Desktop/project_1/project_1.srcs/sources_1/new/pipelining.v:280]
+INFO: [Synth 8-6157] synthesizing module 'ram' [C:/Users/Jason/Desktop/project_1/ram.v:23]
+	Parameter DATA_WIDTH bound to: 32 - type: integer 
+	Parameter ADDR_WIDTH bound to: 10 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'ram' (16#1) [C:/Users/Jason/Desktop/project_1/ram.v:23]
+INFO: [Synth 8-6157] synthesizing module 'Mux4' [C:/Users/Jason/Desktop/project_1/Mux4.v:23]
+INFO: [Synth 8-226] default block is never used [C:/Users/Jason/Desktop/project_1/Mux4.v:29]
+INFO: [Synth 8-6155] done synthesizing module 'Mux4' (17#1) [C:/Users/Jason/Desktop/project_1/Mux4.v:23]
+INFO: [Synth 8-6157] synthesizing module 'movzx__parameterized0' [C:/Users/Jason/Desktop/project_1/movzx.v:22]
+	Parameter IN_WIDTH bound to: 8 - type: integer 
+	Parameter OUT_WIDTH bound to: 32 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'movzx__parameterized0' (17#1) [C:/Users/Jason/Desktop/project_1/movzx.v:22]
+INFO: [Synth 8-6157] synthesizing module 'MEM_WB' [C:/Users/Jason/Desktop/project_1/project_1.srcs/sources_1/new/MEM_WB.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'MEM_WB' (18#1) [C:/Users/Jason/Desktop/project_1/project_1.srcs/sources_1/new/MEM_WB.v:23]
+WARNING: [Synth 8-689] width (5) of port connection 'WSharp_out' does not match port width (32) of module 'MEM_WB' [C:/Users/Jason/Desktop/project_1/project_1.srcs/sources_1/new/pipelining.v:321]
+INFO: [Synth 8-6157] synthesizing module 'counter' [C:/Users/Jason/Desktop/project_1/counter.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'counter' (19#1) [C:/Users/Jason/Desktop/project_1/counter.v:23]
+INFO: [Synth 8-6157] synthesizing module 'divider' [C:/Users/Jason/Desktop/project_1/divider.v:1]
+	Parameter N bound to: 1000000 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'divider' (20#1) [C:/Users/Jason/Desktop/project_1/divider.v:1]
+INFO: [Synth 8-6157] synthesizing module 'display' [C:/Users/Jason/Desktop/project_1/display.v:22]
+	Parameter times bound to: 40000 - type: integer 
+WARNING: [Synth 8-567] referenced signal 'mode' should be on the sensitivity list [C:/Users/Jason/Desktop/project_1/display.v:53]
+WARNING: [Synth 8-567] referenced signal 'leddata' should be on the sensitivity list [C:/Users/Jason/Desktop/project_1/display.v:53]
+WARNING: [Synth 8-567] referenced signal 'totaltimes' should be on the sensitivity list [C:/Users/Jason/Desktop/project_1/display.v:53]
+WARNING: [Synth 8-567] referenced signal 'JMP' should be on the sensitivity list [C:/Users/Jason/Desktop/project_1/display.v:53]
+WARNING: [Synth 8-567] referenced signal 'CJMP' should be on the sensitivity list [C:/Users/Jason/Desktop/project_1/display.v:53]
+WARNING: [Synth 8-567] referenced signal 'mem' should be on the sensitivity list [C:/Users/Jason/Desktop/project_1/display.v:53]
+INFO: [Synth 8-6155] done synthesizing module 'display' (21#1) [C:/Users/Jason/Desktop/project_1/display.v:22]
+WARNING: [Synth 8-567] referenced signal 'MEM_AluR' should be on the sensitivity list [C:/Users/Jason/Desktop/project_1/project_1.srcs/sources_1/new/pipelining.v:381]
+WARNING: [Synth 8-567] referenced signal 'MemToReg' should be on the sensitivity list [C:/Users/Jason/Desktop/project_1/project_1.srcs/sources_1/new/pipelining.v:381]
+INFO: [Synth 8-6157] synthesizing module 'RedirectControl' [C:/Users/Jason/Desktop/project_1/project_1.srcs/sources_1/new/RedirectControl.v:1]
+INFO: [Synth 8-6157] synthesizing module 'regfileUse' [C:/Users/Jason/Desktop/project_1/project_1.srcs/sources_1/new/regfileUse.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'regfileUse' (22#1) [C:/Users/Jason/Desktop/project_1/project_1.srcs/sources_1/new/regfileUse.v:1]
+INFO: [Synth 8-6157] synthesizing module 'pri' [C:/Users/Jason/Desktop/project_1/project_1.srcs/sources_1/new/pri.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'pri' (23#1) [C:/Users/Jason/Desktop/project_1/project_1.srcs/sources_1/new/pri.v:1]
+INFO: [Synth 8-6157] synthesizing module 'mux2_1__parameterized1' [C:/Users/Jason/Desktop/project_1/selector.v:23]
+	Parameter WIDTH bound to: 2 - type: integer 
+INFO: [Synth 8-226] default block is never used [C:/Users/Jason/Desktop/project_1/selector.v:30]
+INFO: [Synth 8-6155] done synthesizing module 'mux2_1__parameterized1' (23#1) [C:/Users/Jason/Desktop/project_1/selector.v:23]
+WARNING: [Synth 8-689] width (2) of port connection 'out1' does not match port width (3) of module 'mux2_1__parameterized1' [C:/Users/Jason/Desktop/project_1/project_1.srcs/sources_1/new/RedirectControl.v:66]
+WARNING: [Synth 8-689] width (2) of port connection 'out1' does not match port width (3) of module 'mux2_1__parameterized1' [C:/Users/Jason/Desktop/project_1/project_1.srcs/sources_1/new/RedirectControl.v:67]
+INFO: [Synth 8-6157] synthesizing module 'Register__parameterized0' [C:/Users/Jason/Desktop/project_1/Register.v:23]
+	Parameter DATA_WIDTH bound to: 2 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'Register__parameterized0' (23#1) [C:/Users/Jason/Desktop/project_1/Register.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'RedirectControl' (24#1) [C:/Users/Jason/Desktop/project_1/project_1.srcs/sources_1/new/RedirectControl.v:1]
+WARNING: [Synth 8-4446] all outputs are unconnected for this instance and logic may be removed [C:/Users/Jason/Desktop/project_1/project_1.srcs/sources_1/new/pipelining.v:435]
+INFO: [Synth 8-6157] synthesizing module 'logout' [C:/Users/Jason/Desktop/project_1/logout.v:1]
+WARNING: [Synth 8-639] system function call 'fopen' not supported [C:/Users/Jason/Desktop/project_1/logout.v:8]
+WARNING: [Synth 8-567] referenced signal 'cy' should be on the sensitivity list [C:/Users/Jason/Desktop/project_1/logout.v:10]
+INFO: [Synth 8-6155] done synthesizing module 'logout' (25#1) [C:/Users/Jason/Desktop/project_1/logout.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'pipelining' (26#1) [C:/Users/Jason/Desktop/project_1/project_1.srcs/sources_1/new/pipelining.v:21]
+WARNING: [Synth 8-3331] design logout has unconnected port clk
+WARNING: [Synth 8-3331] design logout has unconnected port cy[31]
+WARNING: [Synth 8-3331] design logout has unconnected port cy[30]
+WARNING: [Synth 8-3331] design logout has unconnected port cy[29]
+WARNING: [Synth 8-3331] design logout has unconnected port cy[28]
+WARNING: [Synth 8-3331] design logout has unconnected port cy[27]
+WARNING: [Synth 8-3331] design logout has unconnected port cy[26]
+WARNING: [Synth 8-3331] design logout has unconnected port cy[25]
+WARNING: [Synth 8-3331] design logout has unconnected port cy[24]
+WARNING: [Synth 8-3331] design logout has unconnected port cy[23]
+WARNING: [Synth 8-3331] design logout has unconnected port cy[22]
+WARNING: [Synth 8-3331] design logout has unconnected port cy[21]
+WARNING: [Synth 8-3331] design logout has unconnected port cy[20]
+WARNING: [Synth 8-3331] design logout has unconnected port cy[19]
+WARNING: [Synth 8-3331] design logout has unconnected port cy[18]
+WARNING: [Synth 8-3331] design logout has unconnected port cy[17]
+WARNING: [Synth 8-3331] design logout has unconnected port cy[16]
+WARNING: [Synth 8-3331] design logout has unconnected port cy[15]
+WARNING: [Synth 8-3331] design logout has unconnected port cy[14]
+WARNING: [Synth 8-3331] design logout has unconnected port cy[13]
+WARNING: [Synth 8-3331] design logout has unconnected port cy[12]
+WARNING: [Synth 8-3331] design logout has unconnected port cy[11]
+WARNING: [Synth 8-3331] design logout has unconnected port cy[10]
+WARNING: [Synth 8-3331] design logout has unconnected port cy[9]
+WARNING: [Synth 8-3331] design logout has unconnected port cy[8]
+WARNING: [Synth 8-3331] design logout has unconnected port cy[7]
+WARNING: [Synth 8-3331] design logout has unconnected port cy[6]
+WARNING: [Synth 8-3331] design logout has unconnected port cy[5]
+WARNING: [Synth 8-3331] design logout has unconnected port cy[4]
+WARNING: [Synth 8-3331] design logout has unconnected port cy[3]
+WARNING: [Synth 8-3331] design logout has unconnected port cy[2]
+WARNING: [Synth 8-3331] design logout has unconnected port cy[1]
+WARNING: [Synth 8-3331] design logout has unconnected port cy[0]
+WARNING: [Synth 8-3331] design logout has unconnected port jm[31]
+WARNING: [Synth 8-3331] design logout has unconnected port jm[30]
+WARNING: [Synth 8-3331] design logout has unconnected port jm[29]
+WARNING: [Synth 8-3331] design logout has unconnected port jm[28]
+WARNING: [Synth 8-3331] design logout has unconnected port jm[27]
+WARNING: [Synth 8-3331] design logout has unconnected port jm[26]
+WARNING: [Synth 8-3331] design logout has unconnected port jm[25]
+WARNING: [Synth 8-3331] design logout has unconnected port jm[24]
+WARNING: [Synth 8-3331] design logout has unconnected port jm[23]
+WARNING: [Synth 8-3331] design logout has unconnected port jm[22]
+WARNING: [Synth 8-3331] design logout has unconnected port jm[21]
+WARNING: [Synth 8-3331] design logout has unconnected port jm[20]
+WARNING: [Synth 8-3331] design logout has unconnected port jm[19]
+WARNING: [Synth 8-3331] design logout has unconnected port jm[18]
+WARNING: [Synth 8-3331] design logout has unconnected port jm[17]
+WARNING: [Synth 8-3331] design logout has unconnected port jm[16]
+WARNING: [Synth 8-3331] design logout has unconnected port jm[15]
+WARNING: [Synth 8-3331] design logout has unconnected port jm[14]
+WARNING: [Synth 8-3331] design logout has unconnected port jm[13]
+WARNING: [Synth 8-3331] design logout has unconnected port jm[12]
+WARNING: [Synth 8-3331] design logout has unconnected port jm[11]
+WARNING: [Synth 8-3331] design logout has unconnected port jm[10]
+WARNING: [Synth 8-3331] design logout has unconnected port jm[9]
+WARNING: [Synth 8-3331] design logout has unconnected port jm[8]
+WARNING: [Synth 8-3331] design logout has unconnected port jm[7]
+WARNING: [Synth 8-3331] design logout has unconnected port jm[6]
+WARNING: [Synth 8-3331] design logout has unconnected port jm[5]
+WARNING: [Synth 8-3331] design logout has unconnected port jm[4]
+WARNING: [Synth 8-3331] design logout has unconnected port jm[3]
+WARNING: [Synth 8-3331] design logout has unconnected port jm[2]
+WARNING: [Synth 8-3331] design logout has unconnected port jm[1]
+WARNING: [Synth 8-3331] design logout has unconnected port jm[0]
+WARNING: [Synth 8-3331] design logout has unconnected port cj[31]
+WARNING: [Synth 8-3331] design logout has unconnected port cj[30]
+WARNING: [Synth 8-3331] design logout has unconnected port cj[29]
+WARNING: [Synth 8-3331] design logout has unconnected port cj[28]
+WARNING: [Synth 8-3331] design logout has unconnected port cj[27]
+WARNING: [Synth 8-3331] design logout has unconnected port cj[26]
+WARNING: [Synth 8-3331] design logout has unconnected port cj[25]
+WARNING: [Synth 8-3331] design logout has unconnected port cj[24]
+WARNING: [Synth 8-3331] design logout has unconnected port cj[23]
+WARNING: [Synth 8-3331] design logout has unconnected port cj[22]
+WARNING: [Synth 8-3331] design logout has unconnected port cj[21]
+WARNING: [Synth 8-3331] design logout has unconnected port cj[20]
+WARNING: [Synth 8-3331] design logout has unconnected port cj[19]
+WARNING: [Synth 8-3331] design logout has unconnected port cj[18]
+WARNING: [Synth 8-3331] design logout has unconnected port cj[17]
+WARNING: [Synth 8-3331] design logout has unconnected port cj[16]
+WARNING: [Synth 8-3331] design logout has unconnected port cj[15]
+WARNING: [Synth 8-3331] design logout has unconnected port cj[14]
+WARNING: [Synth 8-3331] design logout has unconnected port cj[13]
+WARNING: [Synth 8-3331] design logout has unconnected port cj[12]
+WARNING: [Synth 8-3331] design logout has unconnected port cj[11]
+WARNING: [Synth 8-3331] design logout has unconnected port cj[10]
+WARNING: [Synth 8-3331] design logout has unconnected port cj[9]
+WARNING: [Synth 8-3331] design logout has unconnected port cj[8]
+WARNING: [Synth 8-3331] design logout has unconnected port cj[7]
+WARNING: [Synth 8-3331] design logout has unconnected port cj[6]
+WARNING: [Synth 8-3331] design logout has unconnected port cj[5]
+WARNING: [Synth 8-3331] design logout has unconnected port cj[4]
+WARNING: [Synth 8-3331] design logout has unconnected port cj[3]
+WARNING: [Synth 8-3331] design logout has unconnected port cj[2]
+WARNING: [Synth 8-3331] design logout has unconnected port cj[1]
+WARNING: [Synth 8-3331] design logout has unconnected port cj[0]
+WARNING: [Synth 8-3331] design logout has unconnected port commandLine[31]
+WARNING: [Synth 8-3331] design logout has unconnected port commandLine[30]
+WARNING: [Synth 8-3331] design logout has unconnected port commandLine[29]
+INFO: [Common 17-14] Message 'Synth 8-3331' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 397.141 ; gain = 131.645
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 397.141 ; gain = 131.645
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 397.141 ; gain = 131.645
+---------------------------------------------------------------------------------
+INFO: [Device 21-403] Loading part xc7a100tcsg324-1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [C:/Users/Jason/Desktop/project_1/Nexys4DDR_Master.xdc]
+Finished Parsing XDC File [C:/Users/Jason/Desktop/project_1/Nexys4DDR_Master.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/Users/Jason/Desktop/project_1/Nexys4DDR_Master.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/pipelining_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/pipelining_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 753.727 ; gain = 0.000
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 753.727 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 753.727 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.007 . Memory (MB): peak = 753.727 ; gain = 0.000
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 753.727 ; gain = 488.230
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7a100tcsg324-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 753.727 ; gain = 488.230
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 753.727 ; gain = 488.230
+---------------------------------------------------------------------------------
+INFO: [Synth 8-5546] ROM "rom" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5545] ROM "counter" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "clk_N" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5546] ROM "cmp_4" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "cmp_2" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "cmp_10" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "cmp_9" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "cmp_12" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "cmp_11" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5545] ROM "CallType" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+WARNING: [Synth 8-327] inferring latch for variable 'num_show_reg' [C:/Users/Jason/Desktop/project_1/display.v:60]
+WARNING: [Synth 8-327] inferring latch for variable 'out_reg' [C:/Users/Jason/Desktop/project_1/project_1.srcs/sources_1/new/pri.v:4]
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:15 ; elapsed = 00:00:16 . Memory (MB): peak = 753.727 ; gain = 488.230
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 4     
+	   3 Input     32 Bit       Adders := 1     
+	   2 Input     16 Bit       Adders := 3     
+	   2 Input      3 Bit       Adders := 1     
++---XORs : 
+	   2 Input     32 Bit         XORs := 1     
++---Registers : 
+	               32 Bit    Registers := 24    
+	               16 Bit    Registers := 3     
+	                5 Bit    Registers := 2     
+	                4 Bit    Registers := 1     
+	                3 Bit    Registers := 1     
+	                2 Bit    Registers := 2     
+	                1 Bit    Registers := 27    
++---Multipliers : 
+	                32x32  Multipliers := 1     
++---RAMs : 
+	             1024 Bit         RAMs := 1     
++---Muxes : 
+	   2 Input     33 Bit        Muxes := 8     
+	   2 Input     32 Bit        Muxes := 3     
+	 529 Input     32 Bit        Muxes := 1     
+	   4 Input     32 Bit        Muxes := 2     
+	   2 Input     16 Bit        Muxes := 3     
+	   2 Input     10 Bit        Muxes := 1     
+	   4 Input      8 Bit        Muxes := 1     
+	   7 Input      8 Bit        Muxes := 1     
+	   8 Input      8 Bit        Muxes := 1     
+	   2 Input      6 Bit        Muxes := 5     
+	   4 Input      4 Bit        Muxes := 2     
+	   2 Input      3 Bit        Muxes := 2     
+	   2 Input      2 Bit        Muxes := 6     
+	   2 Input      1 Bit        Muxes := 24    
+	   7 Input      1 Bit        Muxes := 1     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module pipelining 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 2     
++---Muxes : 
+	   2 Input     10 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 2     
+Module Register 
+Detailed RTL Component Info : 
++---Registers : 
+	               32 Bit    Registers := 1     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 1     
+Module rom 
+Detailed RTL Component Info : 
++---Muxes : 
+	 529 Input     32 Bit        Muxes := 1     
+Module IF_ID 
+Detailed RTL Component Info : 
++---Registers : 
+	               32 Bit    Registers := 3     
+Module regfile 
+Detailed RTL Component Info : 
++---RAMs : 
+	             1024 Bit         RAMs := 1     
+Module ID_EX 
+Detailed RTL Component Info : 
++---Registers : 
+	               32 Bit    Registers := 7     
+	                5 Bit    Registers := 2     
+	                4 Bit    Registers := 1     
+	                1 Bit    Registers := 13    
+Module mux2_1 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input      6 Bit        Muxes := 1     
+Module mux2_1__parameterized0 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input     33 Bit        Muxes := 1     
+Module Mux4b32 
+Detailed RTL Component Info : 
++---Muxes : 
+	   4 Input     32 Bit        Muxes := 1     
+Module ALU 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 1     
+	   3 Input     32 Bit       Adders := 1     
++---XORs : 
+	   2 Input     32 Bit         XORs := 1     
++---Multipliers : 
+	                32x32  Multipliers := 1     
+Module EX_MEM 
+Detailed RTL Component Info : 
++---Registers : 
+	               32 Bit    Registers := 6     
+	                1 Bit    Registers := 8     
+Module Mux4 
+Detailed RTL Component Info : 
++---Muxes : 
+	   4 Input      8 Bit        Muxes := 1     
+Module MEM_WB 
+Detailed RTL Component Info : 
++---Registers : 
+	               32 Bit    Registers := 5     
+	                1 Bit    Registers := 4     
+Module counter 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     16 Bit       Adders := 1     
++---Registers : 
+	               16 Bit    Registers := 1     
++---Muxes : 
+	   2 Input     16 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 1     
+Module divider 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 1     
++---Registers : 
+	               32 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 1     
+Module display 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      3 Bit       Adders := 1     
++---Registers : 
+	                3 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   7 Input      8 Bit        Muxes := 1     
+	   8 Input      8 Bit        Muxes := 1     
+	   4 Input      4 Bit        Muxes := 2     
+	   7 Input      1 Bit        Muxes := 1     
+Module pri 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input      2 Bit        Muxes := 2     
+	   2 Input      1 Bit        Muxes := 4     
+Module mux2_1__parameterized1 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input      3 Bit        Muxes := 1     
+Module Register__parameterized0 
+Detailed RTL Component Info : 
++---Registers : 
+	                2 Bit    Registers := 1     
++---Muxes : 
+	   2 Input      2 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 1     
+Module RedirectControl 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 6     
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 240 (col length:80)
+BRAMs: 270 (col length: RAMB18 80 RAMB36 40)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+Warning: Parallel synthesis criteria is not met 
+INFO: [Synth 8-5845] Not enough pipeline registers after wide multiplier. Recommended levels of pipeline registers is 4 [C:/Users/Jason/Desktop/project_1/ALU.v:79]
+DSP Report: Generating DSP R0, operation Mode is: A*B.
+DSP Report: operator R0 is absorbed into DSP R0.
+DSP Report: operator R0 is absorbed into DSP R0.
+DSP Report: Generating DSP R0, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator R0 is absorbed into DSP R0.
+DSP Report: operator R0 is absorbed into DSP R0.
+DSP Report: Generating DSP R0, operation Mode is: A*B.
+DSP Report: operator R0 is absorbed into DSP R0.
+DSP Report: operator R0 is absorbed into DSP R0.
+DSP Report: Generating DSP R0, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator R0 is absorbed into DSP R0.
+DSP Report: operator R0 is absorbed into DSP R0.
+INFO: [Synth 8-5546] ROM "_rcontrol/cmp_2" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "_rcontrol/cmp_4" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "_rcontrol/cmp_9" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "_rcontrol/cmp_10" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5545] ROM "_divider/counter" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "_divider/clk_N" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "CallType" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-3886] merging instance '_idex/IR_out_reg[25]' (FDRE) to '_idex/Address_out_reg[30]'
+INFO: [Synth 8-3886] merging instance '_idex/Address_out_reg[30]' (FDRE) to '_idex/Address_out_reg[31]'
+INFO: [Synth 8-3886] merging instance '_idex/Address_out_reg[31]' (FDRE) to '_idex/Address_out_reg[29]'
+INFO: [Synth 8-3886] merging instance '_idex/Address_out_reg[28]' (FDRE) to '_idex/Address_out_reg[29]'
+INFO: [Synth 8-3886] merging instance '_idex/Address_out_reg[29]' (FDRE) to '_idex/Address_out_reg[27]'
+INFO: [Synth 8-3886] merging instance '_idex/IR_out_reg[24]' (FDRE) to '_idex/Address_out_reg[26]'
+INFO: [Synth 8-3886] merging instance '_idex/IR_out_reg[22]' (FDRE) to '_idex/Address_out_reg[24]'
+INFO: [Synth 8-3886] merging instance '_idex/IR_out_reg[23]' (FDRE) to '_idex/Address_out_reg[25]'
+INFO: [Synth 8-3886] merging instance '_idex/IR_out_reg[20]' (FDRE) to '_idex/Address_out_reg[22]'
+INFO: [Synth 8-3886] merging instance '_idex/IR_out_reg[21]' (FDRE) to '_idex/Address_out_reg[23]'
+INFO: [Synth 8-3886] merging instance '_idex/IR_out_reg[18]' (FDRE) to '_idex/Address_out_reg[20]'
+INFO: [Synth 8-3886] merging instance '_idex/IR_out_reg[19]' (FDRE) to '_idex/Address_out_reg[21]'
+INFO: [Synth 8-3886] merging instance '_idex/IR_out_reg[16]' (FDRE) to '_idex/Address_out_reg[18]'
+INFO: [Synth 8-3886] merging instance '_idex/IR_out_reg[17]' (FDRE) to '_idex/Address_out_reg[19]'
+INFO: [Synth 8-3886] merging instance '_idex/IR_out_reg[14]' (FDRE) to '_idex/Address_out_reg[16]'
+INFO: [Synth 8-3886] merging instance '_idex/Address_out_reg[16]' (FDRE) to '_idex/imm_out_reg[14]'
+INFO: [Synth 8-3886] merging instance '_idex/IR_out_reg[15]' (FDRE) to '_idex/Address_out_reg[17]'
+INFO: [Synth 8-3886] merging instance '_idex/Address_out_reg[17]' (FDRE) to '_idex/imm_out_reg[15]'
+INFO: [Synth 8-3886] merging instance '_idex/IR_out_reg[12]' (FDRE) to '_idex/Address_out_reg[14]'
+INFO: [Synth 8-3886] merging instance '_idex/Address_out_reg[14]' (FDRE) to '_idex/imm_out_reg[12]'
+INFO: [Synth 8-3886] merging instance '_idex/IR_out_reg[13]' (FDRE) to '_idex/Address_out_reg[15]'
+INFO: [Synth 8-3886] merging instance '_idex/Address_out_reg[15]' (FDRE) to '_idex/imm_out_reg[13]'
+INFO: [Synth 8-3886] merging instance '_idex/IR_out_reg[10]' (FDRE) to '_idex/Address_out_reg[12]'
+INFO: [Synth 8-3886] merging instance '_idex/Address_out_reg[12]' (FDRE) to '_idex/imm_out_reg[10]'
+INFO: [Synth 8-3886] merging instance '_idex/IR_out_reg[11]' (FDRE) to '_idex/Address_out_reg[13]'
+INFO: [Synth 8-3886] merging instance '_idex/Address_out_reg[13]' (FDRE) to '_idex/imm_out_reg[11]'
+INFO: [Synth 8-3886] merging instance '_idex/Address_out_reg[0]' (FDRE) to '_idex/Address_out_reg[1]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\_idex/Address_out_reg[1] )
+INFO: [Synth 8-3886] merging instance '_idex/IR_out_reg[9]' (FDRE) to '_idex/Address_out_reg[11]'
+INFO: [Synth 8-3886] merging instance '_idex/Address_out_reg[11]' (FDRE) to '_idex/imm_out_reg[9]'
+INFO: [Synth 8-3886] merging instance '_idex/IR_out_reg[0]' (FDRE) to '_idex/Address_out_reg[2]'
+INFO: [Synth 8-3886] merging instance '_idex/Address_out_reg[2]' (FDRE) to '_idex/imm_out_reg[0]'
+INFO: [Synth 8-3886] merging instance '_idex/IR_out_reg[8]' (FDRE) to '_idex/Address_out_reg[10]'
+INFO: [Synth 8-3886] merging instance '_idex/Address_out_reg[10]' (FDRE) to '_idex/imm_out_reg[8]'
+INFO: [Synth 8-3886] merging instance '_idex/IR_out_reg[4]' (FDRE) to '_idex/Address_out_reg[6]'
+INFO: [Synth 8-3886] merging instance '_idex/Address_out_reg[6]' (FDRE) to '_idex/imm_out_reg[4]'
+INFO: [Synth 8-3886] merging instance '_idex/IR_out_reg[3]' (FDRE) to '_idex/Address_out_reg[5]'
+INFO: [Synth 8-3886] merging instance '_idex/Address_out_reg[5]' (FDRE) to '_idex/imm_out_reg[3]'
+INFO: [Synth 8-3886] merging instance '_idex/IR_out_reg[2]' (FDRE) to '_idex/Address_out_reg[4]'
+INFO: [Synth 8-3886] merging instance '_idex/Address_out_reg[4]' (FDRE) to '_idex/imm_out_reg[2]'
+INFO: [Synth 8-3886] merging instance '_idex/IR_out_reg[5]' (FDRE) to '_idex/Address_out_reg[7]'
+INFO: [Synth 8-3886] merging instance '_idex/Address_out_reg[7]' (FDRE) to '_idex/imm_out_reg[5]'
+INFO: [Synth 8-3886] merging instance '_idex/IR_out_reg[7]' (FDRE) to '_idex/Address_out_reg[9]'
+INFO: [Synth 8-3886] merging instance '_idex/Address_out_reg[9]' (FDRE) to '_idex/imm_out_reg[7]'
+INFO: [Synth 8-3886] merging instance '_idex/IR_out_reg[6]' (FDRE) to '_idex/Address_out_reg[8]'
+INFO: [Synth 8-3886] merging instance '_idex/Address_out_reg[8]' (FDRE) to '_idex/imm_out_reg[6]'
+INFO: [Synth 8-3886] merging instance '_idex/IR_out_reg[1]' (FDRE) to '_idex/Address_out_reg[3]'
+INFO: [Synth 8-3886] merging instance '_idex/Address_out_reg[3]' (FDRE) to '_idex/imm_out_reg[1]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\_ifid/instru_out_reg[30] )
+INFO: [Synth 8-3886] merging instance '_idex/imm_out_reg[26]' (FDRE) to '_idex/imm_out_reg[16]'
+INFO: [Synth 8-3886] merging instance '_idex/imm_out_reg[18]' (FDRE) to '_idex/imm_out_reg[16]'
+INFO: [Synth 8-3886] merging instance '_idex/imm_out_reg[22]' (FDRE) to '_idex/imm_out_reg[16]'
+INFO: [Synth 8-3886] merging instance '_idex/imm_out_reg[30]' (FDRE) to '_idex/imm_out_reg[16]'
+INFO: [Synth 8-3886] merging instance '_idex/imm_out_reg[24]' (FDRE) to '_idex/imm_out_reg[16]'
+INFO: [Synth 8-3886] merging instance '_idex/imm_out_reg[16]' (FDRE) to '_idex/imm_out_reg[17]'
+INFO: [Synth 8-3886] merging instance '_idex/imm_out_reg[20]' (FDRE) to '_idex/imm_out_reg[17]'
+INFO: [Synth 8-3886] merging instance '_idex/imm_out_reg[28]' (FDRE) to '_idex/imm_out_reg[17]'
+INFO: [Synth 8-3886] merging instance '_idex/imm_out_reg[25]' (FDRE) to '_idex/imm_out_reg[17]'
+INFO: [Synth 8-3886] merging instance '_idex/imm_out_reg[17]' (FDRE) to '_idex/imm_out_reg[19]'
+INFO: [Synth 8-3886] merging instance '_idex/imm_out_reg[21]' (FDRE) to '_idex/imm_out_reg[19]'
+INFO: [Synth 8-3886] merging instance '_idex/imm_out_reg[29]' (FDRE) to '_idex/imm_out_reg[19]'
+INFO: [Synth 8-3886] merging instance '_idex/imm_out_reg[23]' (FDRE) to '_idex/imm_out_reg[19]'
+INFO: [Synth 8-3886] merging instance '_idex/imm_out_reg[19]' (FDRE) to '_idex/imm_out_reg[27]'
+INFO: [Synth 8-3886] merging instance '_idex/imm_out_reg[27]' (FDRE) to '_idex/imm_out_reg[31]'
+INFO: [Synth 8-3886] merging instance '_idex/imm_out_reg[8]' (FDRE) to '_idex/shamt_out_reg[2]'
+INFO: [Synth 8-3886] merging instance '_idex/imm_out_reg[6]' (FDRE) to '_idex/shamt_out_reg[0]'
+INFO: [Synth 8-3886] merging instance '_idex/imm_out_reg[10]' (FDRE) to '_idex/shamt_out_reg[4]'
+INFO: [Synth 8-3886] merging instance '_idex/imm_out_reg[9]' (FDRE) to '_idex/shamt_out_reg[3]'
+INFO: [Synth 8-3886] merging instance '_idex/imm_out_reg[7]' (FDRE) to '_idex/shamt_out_reg[1]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\_exmem/IR_out_reg[30] )
+WARNING: [Synth 8-3332] Sequential element (_rcontrol/_pri1/out_reg[1]) is unused and will be removed from module pipelining.
+WARNING: [Synth 8-3332] Sequential element (_rcontrol/_pri1/out_reg[0]) is unused and will be removed from module pipelining.
+WARNING: [Synth 8-3332] Sequential element (_rcontrol/_pri2/out_reg[1]) is unused and will be removed from module pipelining.
+WARNING: [Synth 8-3332] Sequential element (_rcontrol/_pri2/out_reg[0]) is unused and will be removed from module pipelining.
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:32 ; elapsed = 00:00:33 . Memory (MB): peak = 753.727 ; gain = 488.230
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Distributed RAM: Preliminary Mapping  Report (see note below)
++------------+----------------------+-----------+----------------------+-------------------+
+|Module Name | RTL Object           | Inference | Size (Depth x Width) | Primitives        | 
++------------+----------------------+-----------+----------------------+-------------------+
+|pipelining  | _regfile/regfile_reg | Implied   | 32 x 32              | RAM32M x 12       | 
+|pipelining  | _ram/ram_reg         | Implied   | 1 K x 32             | RAM256X1S x 128   | 
++------------+----------------------+-----------+----------------------+-------------------+
+
+Note: The table above is a preliminary report that shows the Distributed RAMs at the current stage of the synthesis flow. Some Distributed RAMs may be reimplemented as non Distributed RAM primitives later in the synthesis flow. Multiple instantiated RAMs are reported only once.
+
+DSP: Preliminary Mapping  Report (see note below)
++------------+----------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|Module Name | DSP Mapping    | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
++------------+----------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|ALU         | A*B            | 18     | 16     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|ALU         | (PCIN>>17)+A*B | 16     | 16     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|ALU         | A*B            | 18     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|ALU         | (PCIN>>17)+A*B | 18     | 16     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
++------------+----------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+
+Note: The table above is a preliminary report that shows the DSPs inferred at the current stage of the synthesis flow. Some DSP may be reimplemented as non DSP primitives later in the synthesis flow. Multiple instantiated DSPs are reported only once.
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:46 ; elapsed = 00:00:48 . Memory (MB): peak = 793.207 ; gain = 527.711
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:46 ; elapsed = 00:00:48 . Memory (MB): peak = 796.461 ; gain = 530.965
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Distributed RAM: Final Mapping  Report
++------------+----------------------+-----------+----------------------+-------------------+
+|Module Name | RTL Object           | Inference | Size (Depth x Width) | Primitives        | 
++------------+----------------------+-----------+----------------------+-------------------+
+|pipelining  | _regfile/regfile_reg | Implied   | 32 x 32              | RAM32M x 12       | 
+|pipelining  | _ram/ram_reg         | Implied   | 1 K x 32             | RAM256X1S x 128   | 
++------------+----------------------+-----------+----------------------+-------------------+
+
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:48 ; elapsed = 00:00:50 . Memory (MB): peak = 857.617 ; gain = 592.121
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:49 ; elapsed = 00:00:51 . Memory (MB): peak = 857.617 ; gain = 592.121
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:49 ; elapsed = 00:00:51 . Memory (MB): peak = 857.617 ; gain = 592.121
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:49 ; elapsed = 00:00:51 . Memory (MB): peak = 857.617 ; gain = 592.121
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:49 ; elapsed = 00:00:51 . Memory (MB): peak = 857.617 ; gain = 592.121
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:49 ; elapsed = 00:00:51 . Memory (MB): peak = 857.617 ; gain = 592.121
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:49 ; elapsed = 00:00:51 . Memory (MB): peak = 857.617 ; gain = 592.121
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+----------+------+
+|      |Cell      |Count |
++------+----------+------+
+|1     |BUFG      |     2|
+|2     |CARRY4    |   367|
+|3     |DSP48E1   |     3|
+|4     |LUT1      |    67|
+|5     |LUT2      |   229|
+|6     |LUT3      |  1102|
+|7     |LUT4      |   205|
+|8     |LUT5      |   306|
+|9     |LUT6      |   555|
+|10    |MUXF7     |    70|
+|11    |MUXF8     |     6|
+|12    |RAM256X1S |   128|
+|13    |RAM32M    |    12|
+|14    |FDRE      |   615|
+|15    |LD        |     4|
+|16    |IBUF      |     9|
+|17    |OBUF      |    16|
++------+----------+------+
+
+Report Instance Areas: 
++------+----------------+---------------------------+------+
+|      |Instance        |Module                     |Cells |
++------+----------------+---------------------------+------+
+|1     |top             |                           |  3696|
+|2     |  _alu          |ALU                        |  1395|
+|3     |  _CJMPCounter  |counter                    |    48|
+|4     |  _JMPCounter   |counter_0                  |    44|
+|5     |  _cycleCounter |counter_1                  |    44|
+|6     |  _display      |display                    |    77|
+|7     |  _divider      |divider                    |    52|
+|8     |  _exmem        |EX_MEM                     |   154|
+|9     |  _idex         |ID_EX                      |   787|
+|10    |  _ifid         |IF_ID                      |   141|
+|11    |  _ledRegister  |Register                   |    44|
+|12    |  _memwb        |MEM_WB                     |   384|
+|13    |  _muxb32_8     |Muxb32                     |    16|
+|14    |    _mux32      |mux2_1__parameterized0     |    16|
+|15    |  _ram          |ram                        |   196|
+|16    |  _rcontrol     |RedirectControl            |     4|
+|17    |    _register1  |Register__parameterized0   |     2|
+|18    |    _register2  |Register__parameterized0_3 |     2|
+|19    |  _regfile      |regfile                    |    13|
+|20    |  _register     |Register_2                 |   269|
++------+----------------+---------------------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:49 ; elapsed = 00:00:51 . Memory (MB): peak = 857.617 ; gain = 592.121
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 7 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:39 ; elapsed = 00:00:45 . Memory (MB): peak = 857.617 ; gain = 235.535
+Synthesis Optimization Complete : Time (s): cpu = 00:00:50 ; elapsed = 00:00:51 . Memory (MB): peak = 857.617 ; gain = 592.121
+INFO: [Project 1-571] Translating synthesized netlist
+INFO: [Netlist 29-17] Analyzing 590 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 1 inverter(s) to 12 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 857.617 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 144 instances were transformed.
+  LD => LDCE: 4 instances
+  RAM256X1S => RAM256X1S (MUXF7, MUXF7, MUXF8, RAMS64E, RAMS64E, RAMS64E, RAMS64E): 128 instances
+  RAM32M => RAM32M (inverted pins: WCLK) (RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMS32, RAMS32): 12 instances
+
+INFO: [Common 17-83] Releasing license: Synthesis
+168 Infos, 126 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:53 ; elapsed = 00:00:55 . Memory (MB): peak = 857.617 ; gain = 592.121
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 857.617 ; gain = 0.000
+WARNING: [Constraints 18-5210] No constraints selected for write.
+Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
+INFO: [Common 17-1381] The checkpoint 'C:/Users/Jason/Desktop/project_1/project_1.runs/synth_1/pipelining.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file pipelining_utilization_synth.rpt -pb pipelining_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Sun Mar 17 21:15:55 2019...

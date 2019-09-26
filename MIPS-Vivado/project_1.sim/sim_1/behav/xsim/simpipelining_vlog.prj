@@ -1,0 +1,35 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  \
+"../../../../ALU.v" \
+"../../../../project_1.srcs/sources_1/new/EX_MEM.v" \
+"../../../../project_1.srcs/sources_1/new/ID_EX.v" \
+"../../../../project_1.srcs/sources_1/new/IF_ID.v" \
+"../../../../project_1.srcs/sources_1/new/MEM_WB.v" \
+"../../../../Mux4.v" \
+"../../../../project_1.srcs/sources_1/new/Mux4b32.v" \
+"../../../../Muxb32.v" \
+"../../../../Muxb5.v" \
+"../../../../project_1.srcs/sources_1/new/RedirectControl.v" \
+"../../../../Register.v" \
+"../../../../counter.v" \
+"../../../../display.v" \
+"../../../../divider.v" \
+"../../../../logout.v" \
+"../../../../main_control.v" \
+"../../../../movsx.v" \
+"../../../../movzx.v" \
+"../../../../project_1.srcs/sources_1/new/pipelining.v" \
+"../../../../project_1.srcs/sources_1/new/pri.v" \
+"../../../../ram.v" \
+"../../../../regfile.v" \
+"../../../../project_1.srcs/sources_1/new/regfileUse.v" \
+"../../../../rom.v" \
+"../../../../selector.v" \
+"../../../../shifter.v" \
+"../../../../project_1.srcs/sim_1/new/simpipelining.v" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort
